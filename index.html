@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DesignLab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;700&family=Oswald:wght@300;400;700&family=Lobster&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="left"><img src="assets/logo.svg" alt="logo" height="36"></div>
+    <div class="center"></div>
+    <div class="right"><button id="downloadBtn" class="primary">Download Slide</button></div>
+  </header>
+
+  <main class="layout">
+    <section class="editor-area">
+      <div class="canvas-wrap" id="canvasWrap">
+        <div class="carousel" id="carousel">
+          <div class="slide" data-index="1"><img src="assets/photo_1.jpg" alt="photo_1"><div class="overlay"></div></div>
+          <div class="slide" data-index="2"><img src="assets/photo_2.jpg" alt="photo_2"><div class="overlay"></div></div>
+          <div class="slide" data-index="3"><img src="assets/photo_3.jpg" alt="photo_3"><div class="overlay"></div></div>
+        </div>
+
+        <button class="nav prev" id="prevBtn" aria-label="Previous">‹</button>
+        <button class="nav next" id="nextBtn" aria-label="Next">›</button>
+      </div>
+
+      <div class="thumbs" id="thumbs">
+        <button class="thumb" data-index="1"><img src="assets/photo_1.jpg" alt="t1"></button>
+        <button class="thumb" data-index="2"><img src="assets/photo_2.jpg" alt="t2"></button>
+        <button class="thumb" data-index="3"><img src="assets/photo_3.jpg" alt="t3"></button>
+      </div>
+    </section>
+
+    <aside class="controls">
+      <h3>Properties</h3>
+
+      <div class="control-row">
+        <button id="addTextBtn" class="primary">+ Add Text</button>
+        <button id="delTextBtn" class="danger" title="Delete selected text">Delete</button>
+      </div>
+
+      <label>
+        <div id="activeLabel" style="margin-top:6px; color:#fff"></div>
+      </label>
+
+      
+
+      <label>Font
+        <select id="fontSelect">
+          <option value="Poppins, sans-serif">Poppins</option>
+          <option value="Roboto, sans-serif" selected>Roboto</option>
+          <option value="Oswald, sans-serif">Oswald</option>
+          <option value="Lobster, cursive">Lobster</option>
+          <option value="'Dancing Script', cursive">Dancing Script</option>
+          <option value="Georgia, serif">Georgia</option>
+          <option value="'Courier New', monospace">Courier New</option>
+          <option value="Verdana, Geneva, sans-serif">Verdana</option>
+        </select>
+      </label>
+
+      <label>Font size <span id="fzVal">48</span>px
+        <input type="range" id="fontSize" min="12" max="220" value="48">
+      </label>
+
+      <label>Color
+        <input type="color" id="fontColor" value="#ffffff">
+      </label>
+
+      <label>Alignment
+        <div class="align-row">
+          <button data-align="left" class="align-btn">L</button>
+          <button data-align="center" class="align-btn active">C</button>
+          <button data-align="right" class="align-btn">R</button>
+        </div>
+      </label>
+
+      <label>Style
+        <div style="display:flex; gap:8px; margin-top:6px;">
+          <button id="boldBtn" class="style-btn">B</button>
+          <button id="italicBtn" class="style-btn">I</button>
+          <button id="uppercaseBtn" class="style-btn">Aa</button>
+        </div>
+      </label>
+
+      <hr>
+      <p class="hint">Click a text block to select it. Use +Add Text to create more blocks on the current slide. Controls affect the selected block only.</p>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
